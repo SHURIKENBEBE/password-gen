@@ -69,6 +69,8 @@ function generatePassword(){
     
   }
 
+}
+
 };
 
 // Get references to the #generate element
