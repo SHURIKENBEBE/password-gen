@@ -17,3 +17,7 @@
 ## THEN a password is generated that matches the selected criteria
 ## WHEN the password is generated
 ## THEN the password is either displayed in an alert or written to the page
+
+## this is a mockup of a generated password when user only selects numbers and special characters 
+
+![Alt text](https://file%2B.vscode-resource.vscode-cdn.net/var/folders/l5/csjffchx7r93tc71j9cmc6k00000gn/T/TemporaryItems/NSIRD_screencaptureui_z2YqTR/Screenshot%202023-01-13%20at%2010.37.37.png?version%3D1673577464527)
