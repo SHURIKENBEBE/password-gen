@@ -11,10 +11,17 @@
 
 function generatePassword(){
   // create function variables
-  let lenInput, numLen, confirmChartypeLower, confirmChartypeNum, confirmChartypeUpper, confirmChartypeSpecial, charTypes, password; 
+  let lenInput = 0;
+  let numLen = 0;
+  let confirmChartypeLower = false;
+  let confirmChartypeNum = false; 
+  let confirmChartypeUpper = false; 
+  let confirmChartypeSpecial = false;
+  let charTypes;
+  let password; 
 
   // will execute block until user enters valid input
-  while (true){
+  while (!numLen){
     // prompt user to enter password length
     let lenInput = window.prompt("Enter the desired length for your password");
     let numLen= parseInt (lenInput);
@@ -22,24 +29,20 @@ function generatePassword(){
     // alert invalid number if input is not a numeric value
     if (isNaN(numLen)|| (numLen > 128 || numLen < 8)){
       alert("Please enter a numeric value beteen 8 and 128");
-    } else {
-      break;
     }
 
 
     // window prompting char type selections once valid input for length has been inputted 
-    while(true){
-      const confirmChartypeUpper = window.confirm("Would you like to include upper case characters in your password?");
-      const confirmChartypeLower = window.confirm("Would you like to include lower case characters in your password?");
-      const confirmChartypeNum = window.confirm("Would you like to include numbers in your password?");
-      const confirmChartypeSpecial = window.confirm("Would you like to include special characters in your password?");
+    
+    const confirmChartypeUpper = window.confirm("Would you like to include upper case characters in your password?");
+    const confirmChartypeLower = window.confirm("Would you like to include lower case characters in your password?");
+    const confirmChartypeNum = window.confirm("Would you like to include numbers in your password?");
+    const confirmChartypeSpecial = window.confirm("Would you like to include special characters in your password?");
 
-      if (!confirmChartypeUpper && !confirmChartypeLower && !confirmChartypeNum && !confirmChartypeSpecial){
-        alert("Please choose at least one character type");
-      } else {
-          break;
-      }
+    if (!confirmChartypeUpper && !confirmChartypeLower && !confirmChartypeNum && !confirmChartypeSpecial){
+      alert("Please choose at least one character type");
     }
+    
 
   //empty string to store password
   password='';
@@ -57,11 +60,11 @@ function generatePassword(){
     charTypes = charTypes.concat(["!","@","#","$","%","^","&","*","-","+","?"]);
   }
   
-  for (let i=o; i < numLen; i++){
+  for (let i=0; i < numLen; i++){
     password += charTypes[Math.floor(Math.random()*charTypes.length)];
 
-  }
-  
+
+  console.log(password);
   return password;
     
   }
